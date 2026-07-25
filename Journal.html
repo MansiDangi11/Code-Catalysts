@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindBloom | Journal</title>
+
+    <link rel="stylesheet" href="journal.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside id="sidebar">
+
+        <button id="closeSidebar">✕</button>
+
+        <!-- We'll add content later -->
+
+    </aside>
+
+
+
+    <!-- Main Page -->
+
+    <main class="journal-page">
+
+        <header>
+
+            <button id="openSidebar">☰</button>
+
+            <h2>Today's Chapter</h2>
+
+            <div class="profile">🌸</div>
+
+        </header>
+        
+        
+
+
+        <section class="blank-space">
+
+    <div class="journal-editor"
+         contenteditable="true"
+         data-placeholder="✦ Dear Journal...">
+    </div>
+
+    <button id="saveJournal" class="journal-btn">
+    🌸 Save Reflection
+</button>
+
+    <!-- Floating Toolbar -->
+
+    <div class="floating-toolbar">
+
+    <button class="tool-btn" id="pageBtn" title="Page Style">📄</button>
+
+    <button class="tool-btn" id="fontBtn" title="Font">🔤</button>
+
+    <button class="tool-btn" id="sizeBtn" title="Font Size">🔍</button>
+
+    <button class="tool-btn" id="themeBtn" title="Theme">🎨</button>
+
+    <button class="tool-btn" id="promptBtn" title="Writing Prompt">💡</button>
+
+    <button class="tool-btn bloom-btn" id="bloomBtn" title="Bloom">🌸</button>
+
+</div>
+
+</section>
+
+
+<div class="tool-panel" id="toolPanel">
+
+    <h3 id="panelTitle">Page Style</h3>
+
+    <div id="panelOptions"></div>
+
+</div>
+
+
+
+    </main>
+
+    <script>
+
+        const sidebar = document.getElementById("sidebar");
+
+        const openBtn = document.getElementById("openSidebar");
+
+        const closeBtn = document.getElementById("closeSidebar");
+
+        openBtn.onclick = () => {
+
+            sidebar.classList.add("active");
+
+        }
+
+        closeBtn.onclick = () => {
+
+            sidebar.classList.remove("active");
+
+        }
+
+    </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<div id="saveMessage" class="save-message">
+    ✦ Reflection saved 🌸
+</div>
+
+<script src="journal.js"></script>
+
+</body>
+
+</html>

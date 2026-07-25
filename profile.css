@@ -1,0 +1,282 @@
+body{
+
+    margin:0;
+
+    background:#180018;
+
+    color:#FAE5D8;
+
+    font-family:'Poppins', sans-serif;
+
+}
+
+.profile-page{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:50px 30px 80px;
+
+}
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+
+    margin-top:50px;
+
+}
+
+.card{
+
+    background:#FAE5D8;
+
+    color:#180018;
+
+    border-radius:28px;
+
+    padding:28px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.about-card{
+
+    grid-column:1 / 3;
+
+    min-height:220px;
+
+}
+
+.bucket-card{
+
+    grid-column:1 / 3;
+
+    min-height:220px;
+
+}
+
+.likes-card{
+
+    min-height:220px;
+
+}
+
+.wins-card{
+
+    min-height:220px;
+
+}
+
+.aesthetic-card{
+
+    min-height:180px;
+
+}
+
+.playlist-card{
+
+    min-height:180px;
+
+}
+
+.profile-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    margin:40px 0 60px;
+
+}
+
+.profile-photo img{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #824D69;
+
+    margin-bottom:20px;
+
+}
+
+.profile-header h2{
+
+    font-family:'Cormorant Garamond';
+
+    font-size:48px;
+
+    margin:0;
+
+}
+
+.profile-info{
+
+    color:#DFB6B2;
+
+    margin:12px 0 28px;
+
+}
+
+.bloom-intro{
+
+    max-width:520px;
+
+    background:#2A114B;
+
+    padding:22px 28px;
+
+    border-radius:25px;
+
+    color:#FAE5D8;
+
+    line-height:1.7;
+
+}
+
+.wins-card,
+.playlist-card{
+
+    background:#DFB6B2;
+
+}
+
+.card h2{
+
+    font-family:'Cormorant Garamond';
+
+    font-size:32px;
+
+    color:#522959;
+
+    margin-top:0;
+
+    margin-bottom:18px;
+
+}
+
+.card p,
+.card li{
+
+    color:#2A114B;
+
+    line-height:1.8;
+
+}
+
+.card ul{
+
+    padding-left:18px;
+
+    margin:0;
+
+}
+
+.card{
+
+    transition:.3s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.likes-card{
+
+    transform:rotate(-1deg);
+
+}
+
+.wins-card{
+
+    transform:rotate(1deg);
+
+}
+
+.aesthetic-card{
+
+    transform:rotate(-0.8deg);
+
+}
+
+.playlist-card{
+
+    transform:rotate(0.8deg);
+
+}
+
+.card:hover{
+
+    transform:rotate(0deg) translateY(-6px);
+
+}
+
+
+.back-btn{
+
+    position:fixed;
+
+    top:35px;
+
+    left:35px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.3s ease;
+
+}
+
+.back-btn:hover{
+
+    background:#522959;
+
+    transform:translateY(-4px) scale(1.06);
+
+}
+
+.back-btn:active{
+
+    transform:scale(.95);
+
+}

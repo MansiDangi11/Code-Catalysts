@@ -1,0 +1,714 @@
+body{
+
+    margin:0;
+
+    background:#180018;
+
+    color:#FAE5D8;
+
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+.habit-page{
+
+    max-width:1100px;
+
+    margin-left:100px;
+
+    padding:50px 30px 80px;
+
+}
+
+
+/* Back button */
+
+.back-btn{
+
+    position:fixed;
+
+    top:35px;
+
+    left:35px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.back-btn:hover{
+
+    background:#522959;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* Title */
+
+.page-title{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond';
+
+    font-size:52px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+/* Top section */
+
+.garden-top{
+
+    display:grid;
+
+    grid-template-columns:1.4fr 1fr;
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+/* Quote + Calendar cards */
+
+.quote-card,
+.mini-calendar{
+
+    background:#FAE5D8;
+
+    color:#180018;
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+
+
+.quote-card h2,
+.mini-calendar h2{
+
+    font-family:'Cormorant Garamond';
+
+    color:#522959;
+
+    font-size:32px;
+
+    margin-top:0;
+
+}
+
+
+.quote-card p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#2A114B;
+
+}
+
+
+
+/* Mini calendar */
+
+.calendar-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:8px;
+
+    text-align:center;
+
+}
+
+
+.calendar-grid span{
+
+    padding:7px;
+
+    border-radius:10px;
+
+}
+
+
+
+.calendar-grid span:hover{
+
+    background:#DFB6B2;
+
+}
+
+
+
+/* Habits */
+
+.habits-section{
+
+    background:#2A114B;
+
+    padding:35px;
+
+    border-radius:30px;
+
+}
+
+
+
+.habits-section h2{
+
+    font-family:'Cormorant Garamond';
+
+    font-size:36px;
+
+    margin-top:0;
+
+}
+
+
+
+.habit-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(250,229,216,.2);
+
+    font-size:18px;
+
+}
+
+
+
+.habit-circle{
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    border:2px solid #824D69;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+
+.habit-circle:hover{
+
+    background:#DFB6B2;
+
+}
+
+
+
+/* Add button */
+
+.add-habit-btn{
+
+    display:block;
+
+    margin:35px auto 0;
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+
+.add-habit-btn:hover{
+
+    background:#522959;
+
+    transform:translateY(-3px);
+
+}
+
+.today{
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    font-weight:bold;
+
+}
+
+.bloom-helper{
+
+    position:absolute;
+
+    right:40px;
+
+    top:130px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+.bloom-image{
+
+    width:350px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.bloom-image:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.bloom-popup{
+
+    display:none;
+
+    background:#FAE5D8;
+
+    color:#180018;
+
+    padding:30px 25px;
+
+    border-radius:30px;
+
+    width:260px;
+
+    min-height:180px;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    font-family:'Poppins';
+
+    line-height:1.8;
+
+    position:relative;
+
+}
+
+.bloom-popup::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-12px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-width:12px;
+
+    border-style:solid;
+
+    border-color:#FAE5D8 transparent transparent transparent;
+
+}
+
+
+.habit-popup{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(24,0,24,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10;
+
+}
+
+
+
+.popup-box{
+
+    background:#FAE5D8;
+
+    color:#180018;
+
+    padding:35px;
+
+    width:320px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+}
+
+
+
+.popup-box h2{
+
+    font-family:'Cormorant Garamond';
+
+    font-size:35px;
+
+    color:#522959;
+
+}
+
+
+
+.popup-box input{
+
+    width:90%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:20px;
+
+    margin:20px 0;
+
+    font-family:'Poppins';
+
+}
+
+
+
+.popup-box button{
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    border:none;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-family:'Poppins';
+
+    transition:.3s ease;
+
+}
+
+
+
+.popup-box button:hover{
+
+    background:#522959;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+.popup-box button:active{
+
+    transform:scale(.95);
+
+}
+
+
+.habit-success{
+
+    display:none;
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:#FAE5D8;
+
+    color:#522959;
+
+    padding:15px 25px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    z-index:20;
+
+    animation:slideIn .4s ease;
+
+}
+
+
+
+@keyframes slideIn{
+
+    from{
+
+        transform:translateX(100px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+.habit-circle.completed{
+
+    background:#824D69;
+
+    border-color:#824D69;
+
+}
+
+
+.calendar-day{
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+
+.calendar-day:hover{
+
+    transform:scale(1.15);
+
+    color:#824D69;
+
+}
+
+
+.calendar-day.selected{
+
+    background:#824D69;
+
+    color:white;
+
+    border-radius:50%;
+
+}
+
+
+document.addEventListener("click", function(e){
+
+
+    if(e.target.classList.contains("calendar-day")){
+
+
+        const selectedDate = e.target.dataset.date;
+
+
+        document
+        .querySelectorAll(".calendar-day")
+        .forEach(day => {
+
+            day.classList.remove("selected");
+
+        });
+
+
+        e.target.classList.add("selected");
+
+
+        document.getElementById("selectedDate").innerText =
+        selectedDate + " 🌱";
+
+
+        loadDayHabits(selectedDate);
+
+
+    }
+
+
+});
+
+
+async function loadDayHabits(date){
+
+
+    const { data, error } = await supabaseClient
+    .from("habits_logs")
+    .select(`
+        completed,
+        habits(
+            habit_name
+        )
+    `)
+    .eq("date", date);
+
+
+
+    if(error){
+
+        console.log("Calendar error:", error);
+
+        return;
+
+    }
+
+
+
+    const list = document.getElementById("dayHabitList");
+
+    list.innerHTML="";
+
+
+
+    if(data.length === 0){
+
+        list.innerHTML = `
+            <p>No habits tracked this day 🌱</p>
+        `;
+
+        return;
+
+    }
+
+
+
+    data.forEach((log)=>{
+
+
+        const item = document.createElement("div");
+
+
+        item.innerHTML = `
+
+        ${log.completed ? "🌸" : "○"}
+
+        ${log.habits.habit_name}
+
+        `;
+
+
+        list.appendChild(item);
+
+
+    });
+
+
+}
+
+.calendar-day{
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+.calendar-day:hover{
+
+    transform:scale(1.1);
+
+    color:#824D69;
+
+}
+
+
+
+.calendar-day.selected{
+
+    background:#824D69;
+
+    color:#FAE5D8;
+
+    border-radius:50%;
+
+    width:30px;
+
+    height:30px;
+
+}
+
+
